@@ -44,8 +44,7 @@ export function Contact() {
           },
           body: JSON.stringify({
             access_key:
-              import.meta.env
-                .VITE_WEB3FORMS_ACCESS_KEY,
+  '01b8c08a-99d5-4ce4-8f83-577695188d2b',
 
             subject:
               'New Inquiry from WordMintStudio Website',
