@@ -1,70 +1,89 @@
 import {
-  FileText,
+  Languages,
   Bot,
   CheckCircle2,
-  Globe2,
-  Lightbulb,
+  FileText,
+  Captions,
+  Mic,
 } from 'lucide-react';
 
 const textServices = [
   {
-    icon: FileText,
-    title: 'Translation',
+    icon: Languages,
+    title: 'Translation & Localization',
     description:
-      'Professional human translation services for business, technical, legal, educational, and marketing content.',
+      'Professional translation and localization services for documents, websites, software, applications, and business content with cultural adaptation for target audiences.',
     features: [
+      'English ↔ Hindi Translation',
+      'English ↔ Urdu Translation',
       'Document Translation',
-      'Website Translation',
-      'Technical Translation',
-      'Certified Translation',
+      'Website & Software Localization',
     ],
   },
+
   {
     icon: Bot,
     title: 'MTPE',
     description:
-      'Machine Translation Post-Editing combines AI speed with human expertise for faster and cost-effective multilingual delivery.',
+      'Machine Translation Post-Editing combines AI efficiency with expert linguists to deliver accurate, consistent, and cost-effective multilingual content.',
     features: [
       'Neural MT Integration',
-      'Human Review',
-      'Terminology Control',
+      'Human Post-Editing',
+      'Terminology Management',
       'Fast Turnaround',
     ],
   },
+
   {
     icon: CheckCircle2,
-    title: 'Linguistic QA',
+    title: 'Linguistic Quality Assurance',
     description:
-      'Comprehensive linguistic testing and quality assurance to ensure accuracy, consistency, and cultural relevance.',
+      'Comprehensive linguistic quality assurance to ensure translation accuracy, consistency, readability, and cultural appropriateness.',
     features: [
-      'Error Detection',
+      'Translation Review',
+      'Terminology Validation',
       'Consistency Checks',
-      'Functional Testing',
       'Quality Reports',
     ],
   },
+
   {
-    icon: Globe2,
-    title: 'Localization',
+    icon: FileText,
+    title: 'Transcription Services',
     description:
-      'Adapt websites, software, applications, and content for regional audiences while preserving brand identity.',
+      'Professional transcription services for audio and video content with multilingual support and high accuracy.',
     features: [
-      'Software Localization',
-      'App Localization',
-      'Website Localization',
-      'Cultural Adaptation',
+      'Audio Transcription',
+      'Video Transcription',
+      'Interview Transcription',
+      'Timestamped Files',
     ],
   },
+
   {
-    icon: Lightbulb,
-    title: 'Transcreation',
+    icon: Captions,
+    title: 'Subtitling & Captioning',
     description:
-      'Creative adaptation of marketing and advertising content while preserving tone, emotion, and brand voice.',
+      'Professional subtitle creation and captioning services for films, corporate videos, e-learning content, OTT platforms, and YouTube.',
     features: [
-      'Marketing Content',
-      'Creative Copy',
-      'Brand Messaging',
-      'Campaign Localization',
+      'Subtitle Creation',
+      'Closed Captions',
+      'SRT Files',
+      'Time Synchronization',
+    ],
+  },
+
+  {
+    icon: Mic,
+    title: 'Audio Dubbing & Voice Over',
+    description:
+      'Professional multilingual audio dubbing and voice-over services for corporate videos, e-learning courses, advertisements, documentaries, YouTube content, OTT platforms, and training materials.',
+    features: [
+      'English to Hindi Dubbing',
+      'Hindi to English Dubbing',
+      'Urdu Voice Over',
+      'Voice-over Recording',
+      'Professional Voice Artists',
     ],
   },
 ];
@@ -91,7 +110,7 @@ export function TextServices() {
             </h3>
 
             {/* Description */}
-            <p className="text-slate-300 mb-6 leading-relaxed">
+            <p className="text-slate-300 leading-relaxed mb-6">
               {service.description}
             </p>
 
@@ -102,10 +121,7 @@ export function TextServices() {
                   key={idx}
                   className="flex items-start gap-3 text-slate-300"
                 >
-                  <span className="text-cyan-400 mt-0.5">
-                    ✓
-                  </span>
-
+                  <span className="text-cyan-400 mt-0.5">✓</span>
                   <span>{feature}</span>
                 </li>
               ))}

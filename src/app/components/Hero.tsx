@@ -57,7 +57,8 @@ export function Hero() {
             <p className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto mb-12">
               Translation, Localization, MTPE,
               Linguistic QA, Subtitling and
-              Transcription Services for Global
+              Transcription, Audio Dubbing and
+              Voice Over Services for Global
               Businesses.
             </p>
 
@@ -127,7 +128,7 @@ export function Hero() {
             {/* Card 3 */}
             <div className="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20">
               <div className="text-5xl font-bold text-cyan-400 mb-3">
-                6+
+                7+
               </div>
 
               <div className="text-slate-300 text-lg">
@@ -135,7 +136,7 @@ export function Hero() {
               </div>
 
               <div className="text-slate-400 text-sm mt-2">
-                Translation • Localization • MTPE • LQA
+                Translation • Dubbing • Voice Over • LQA
               </div>
             </div>
 
@@ -145,4 +146,3 @@ export function Hero() {
     </section>
   );
 }
-

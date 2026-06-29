@@ -43,7 +43,8 @@ export function Services() {
 
             <p className="text-slate-300 mb-8">
               From translation and localization to transcription,
-              subtitling, MTPE, and linguistic quality assurance,
+              subtitling, audio dubbing, voice over, MTPE,
+              and linguistic quality assurance,
               our team delivers scalable multilingual solutions.
             </p>
 

@@ -1,6 +1,9 @@
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { useState } from 'react';
 
+const WEB3FORMS_ACCESS_KEY =
+  import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+
 export function Contact() {
   const [formData, setFormData] = useState({
     name: '',
@@ -34,6 +37,14 @@ export function Contact() {
     setSuccess(false);
     setError('');
 
+    if (!WEB3FORMS_ACCESS_KEY) {
+      setLoading(false);
+      setError(
+        'Contact form is not configured. Please email info@wordmintstudio.com.'
+      );
+      return;
+    }
+
     try {
       const response = await fetch(
         'https://api.web3forms.com/submit',
@@ -43,23 +54,23 @@ export function Contact() {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            access_key:
-  '01b8c08a-99d5-4ce4-8f83-577695188d2b',
-
+            access_key: WEB3FORMS_ACCESS_KEY,
             subject:
               'New Inquiry from WordMintStudio Website',
-
+            from_name: 'WordMintStudio Website',
+            replyto: formData.email,
             name: formData.name,
             email: formData.email,
             service: formData.service,
             message: formData.message,
+            botcheck: '',
           }),
         }
       );
 
       const result = await response.json();
 
-      if (result.success) {
+      if (response.ok && result.success) {
         setSuccess(true);
 
         setFormData({
@@ -70,7 +81,8 @@ export function Contact() {
         });
       } else {
         setError(
-          'Failed to send message. Please try again.'
+          result.message ||
+            'Failed to send message. Please try again.'
         );
       }
     } catch (err) {
@@ -102,9 +114,9 @@ export function Contact() {
 
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
             Translation, Localization, MTPE,
-            Subtitling, Transcription and
-            Linguistic QA services tailored
-            to your business needs.
+            Subtitling, Transcription, Audio
+            Dubbing, Voice Over and Linguistic QA
+            services tailored to your business needs.
           </p>
         </div>
 
@@ -189,6 +201,10 @@ export function Contact() {
 
                   <option>
                     Transcription
+                  </option>
+
+                  <option>
+                    Audio Dubbing & Voice Over
                   </option>
                 </select>
               </div>

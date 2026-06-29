@@ -122,6 +122,15 @@ export function Footer() {
                   Transcription
                 </a>
               </li>
+
+              <li>
+                <a
+                  href="#services"
+                  className="hover:text-cyan-400 transition-colors"
+                >
+                  Audio Dubbing & Voice Over
+                </a>
+              </li>
             </ul>
           </div>
 
