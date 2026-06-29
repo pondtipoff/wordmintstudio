@@ -2,7 +2,8 @@ import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { useState } from 'react';
 
 const WEB3FORMS_ACCESS_KEY =
-  import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+  import.meta.env.VITE_WEB3FORMS_ACCESS_KEY ||
+  '01b8c08a-99d5-4ce4-8f83-577695188d2b';
 
 export function Contact() {
   const [formData, setFormData] = useState({
